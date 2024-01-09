@@ -1,4 +1,7 @@
-package med.vol.api.medico;
+package med.vol.api.medico.record;
+
+import med.vol.api.medico.enums.Especialidade;
+import med.vol.api.medico.Medico;
 
 public record DatosListagemMedico(Long id, String nome, String email, String crm, Especialidade especialidade) {
 

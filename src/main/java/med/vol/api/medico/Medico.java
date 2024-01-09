@@ -7,6 +7,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.vol.api.endereco.Endereco;
+import med.vol.api.medico.enums.Especialidade;
+import med.vol.api.medico.record.DadosCadastroMedico;
+import med.vol.api.medico.record.DadosUpdatemedico;
 
 @Getter
 @NoArgsConstructor
