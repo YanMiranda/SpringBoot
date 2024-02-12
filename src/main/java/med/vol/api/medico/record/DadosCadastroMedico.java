@@ -9,19 +9,19 @@ import med.vol.api.endereco.DadosEndereco;
 import med.vol.api.medico.enums.Especialidade;
 
 public record DadosCadastroMedico(
-        @NotBlank
+        @NotBlank(message = "O Nome deve ser preenchido")
         String nome,
         @Email
-        @NotBlank
+        @NotBlank(message = "O E-mail deve ser preenchido")
         String email,
-        @NotBlank
+        @NotBlank(message = "O Telefone deve ser preenchido")
         String telefone,
-        @NotBlank
+        @NotBlank(message = "O CRM deve ser preenchido")
         @Pattern(regexp = "\\d{6}")
         String crm,
-        @NotNull
+        @NotNull(message = "O Profissional deve ter uma especialidade")
         Especialidade especialidade,
         @Valid
-        @NotNull
+        @NotNull(message = "O Endereço deve ser preenchido")
         DadosEndereco endereco) {
 }

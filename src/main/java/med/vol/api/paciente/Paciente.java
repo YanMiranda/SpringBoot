@@ -11,8 +11,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.vol.api.endereco.Endereco;
-import med.vol.api.paciente.record.DadosAtualizacaoPaciente;
-import med.vol.api.paciente.record.DadosCadastroPaciente;
+import med.vol.api.paciente.records.DadosAtualizacaoPaciente;
+import med.vol.api.paciente.records.DadosCadastroPaciente;
 
 @Table(name = "pacientes")
 @Entity(name = "Paciente")
@@ -45,7 +45,7 @@ public class Paciente {
         this.endereco = new Endereco(dados.endereco());
     }
 
-    public void atualizarInformacoes(DadosAtualizacaoPaciente dados) {
+    public void update(DadosAtualizacaoPaciente dados) {
         if (dados.nome() != null) {
             this.nome = dados.nome();
         }
@@ -58,7 +58,7 @@ public class Paciente {
 
     }
 
-    public void excluir() {
+    public void delete() {
         this.ativo = false;
     }
 }

@@ -1,4 +1,4 @@
-package med.vol.api.paciente.record;
+package med.vol.api.paciente.records;
 
 import jakarta.validation.constraints.NotNull;
 import med.vol.api.endereco.DadosEndereco;
