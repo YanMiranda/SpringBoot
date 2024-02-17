@@ -1,6 +1,7 @@
 package med.vol.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
+import med.vol.api.domain.ValidacaoException;
 import med.vol.api.infra.records.DadosErrorValidation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,11 @@ public class ErrorHandler {
     public ResponseEntity handle400(MethodArgumentNotValidException exception) {
         List<FieldError> fieldErrors = exception.getFieldErrors();
         return ResponseEntity.badRequest().body(fieldErrors.stream().map(DadosErrorValidation::new).toList());
+    }
+
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity handle400(ValidacaoException exception) {
+        return ResponseEntity.badRequest().body(exception.getMessage());
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)

@@ -1,5 +1,6 @@
 package med.vol.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.vol.api.domain.paciente.Paciente;
 import med.vol.api.domain.paciente.interfaces.PacienteRepository;
@@ -27,6 +28,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired
